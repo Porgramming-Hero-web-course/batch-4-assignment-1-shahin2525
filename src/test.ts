@@ -1,7 +1,13 @@
-const countWordOccurrences = (sentence: string, word: string) => {
-  const sentenceLowerCase = sentence.toLocaleLowerCase();
-  const wordLowerCase = word.toLocaleLowerCase();
-
-  console.log(sentenceLowerCase, wordLowerCase);
+interface Profile {
+  name: string;
+  age: number;
+  email: string;
+}
+const updateProfile = (obj: Profile, updateObj: Partial<Profile>) => {
+  const updatedDataKeys = Object.keys(obj);
+  const newDataKeys = Object.values(updateObj);
+  console.log(updatedDataKeys, newDataKeys);
+  //   const updatedDataValues =
 };
-const wordAppearsTimes = countWordOccurrences("ami tomi Ami ", "AMI");
+const myProfile: Profile = { name: "Alice", age: 20, email: "alice@example" };
+const updatedProfile = updateProfile(myProfile, { age: 30 });
